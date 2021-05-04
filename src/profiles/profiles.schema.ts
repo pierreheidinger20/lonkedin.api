@@ -1,6 +1,7 @@
 
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { Experience } from './experience/experience.schema';
 
 export type ProfileDocument = Profile & Document;
 
@@ -23,6 +24,7 @@ export class Profile {
   company!:string;
   @Prop()
   presentation!:string;
+
 }
 
 export const ProfileSchema = SchemaFactory.createForClass(Profile);
