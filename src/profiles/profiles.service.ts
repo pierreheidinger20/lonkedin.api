@@ -17,10 +17,14 @@ export class ProfileService {
     return profile;
   }
 
-  async create(createProfileDto: any): Promise<Profile> {
-    const createdCat = new this.profileModel(createProfileDto);
-    return createdCat.save();
+  async create(profileDto: Profile): Promise<Profile> {
+    const createdProfile = new this.profileModel(profileDto);
+    return createdProfile.save();
   }
 
+  async update(profileDto:Profile): Promise<Profile> {
+    let profileUpdated = await this.profileModel.updateOne({email: profileDto.email},profileDto);
+    return profileDto;
+  }
 
 }
