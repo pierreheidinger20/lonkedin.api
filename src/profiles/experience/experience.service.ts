@@ -23,8 +23,12 @@ export class ExperienceService {
   }
 
   async update(experienceDto:Experience): Promise<Experience> {
-    let profileUpdated = await this.experienceModel.updateOne({email: experienceDto.email},experienceDto);
+    console.log(experienceDto._id);
+    let profileUpdated = await this.experienceModel.findOneAndUpdate({_id: experienceDto._id},experienceDto);
     return experienceDto;
   }
-
+  async delete(experienceDto:Experience): Promise<Experience> {
+    let profileDeleted = await this.experienceModel.deleteOne({_id: experienceDto._id});
+    return experienceDto;
+  }
 }
