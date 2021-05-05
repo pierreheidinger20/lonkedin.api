@@ -8,7 +8,7 @@ export class SkillsController {
   constructor(private _skillService:SkillService)
   {}
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get(':email')
   async getSkills(@Param() params) {
     let skill = await this._skillService.get(params.email);

@@ -7,7 +7,7 @@ export class ProfilesController {
 
   constructor(private _profilesService:ProfileService)
   {}
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get(':email')
   async getProfile(@Param() params) {
     let profile = await this._profilesService.get(params.email);

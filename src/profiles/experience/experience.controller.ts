@@ -8,7 +8,7 @@ export class ExperiencesController {
   constructor(private _experienceService:ExperienceService)
   {}
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get(':email')
   async getExperiences(@Param() params) {
     let profile = await this._experienceService.get(params.email);

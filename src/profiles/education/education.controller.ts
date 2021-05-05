@@ -8,7 +8,7 @@ export class EducationsController {
   constructor(private _educationService:EducationService)
   {}
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get(':email')
   async getEducations(@Param() params) {
     let education = await this._educationService.get(params.email);

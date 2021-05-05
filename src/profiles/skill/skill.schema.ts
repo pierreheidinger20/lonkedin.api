@@ -14,7 +14,9 @@ export class Skill {
   @Prop()
   name:string;
   @Prop()
-  nivel: Nivel
+  nivel: Nivel;
+  @Prop()
+  percentual: number
 }
 
 export const SkillSchema = SchemaFactory.createForClass(Skill);
