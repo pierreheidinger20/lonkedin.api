@@ -27,10 +27,11 @@ export class ExperiencesController {
     return profile;
   }
 
-  @UseGuards(AuthGuard)
-  @Delete()
-  async deleteExperience(@Body() updateExperience:any) {
-    let profile = await this._experienceService.delete(updateExperience);
-    return profile;
+//   @UseGuards(AuthGuard)
+  @Delete(':id')
+  async deleteExperience(@Param() params) {
+      
+     await this._experienceService.delete(params.id);
+    
   }
 }
