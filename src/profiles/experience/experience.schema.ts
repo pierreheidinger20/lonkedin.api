@@ -16,7 +16,7 @@ export class Experience {
   @Prop()
   company!:string;
   @Prop()
-  starDate!:Date;
+  startDate!:Date;
   @Prop()
   endDate!:Date;
 
