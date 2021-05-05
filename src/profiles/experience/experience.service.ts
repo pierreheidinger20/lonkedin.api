@@ -23,7 +23,6 @@ export class ExperienceService {
   }
 
   async update(experienceDto:Experience): Promise<Experience> {
-    console.log(experienceDto._id);
     let profileUpdated = await this.experienceModel.findOneAndUpdate({_id: experienceDto._id},experienceDto);
     return experienceDto;
   }
